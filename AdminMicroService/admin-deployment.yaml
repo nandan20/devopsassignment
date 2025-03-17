@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: admin-microservice
-        image: admin-micro-service:latest
-        imagePullPolicy: Never
+        image: admin-deployment.yaml
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8081
