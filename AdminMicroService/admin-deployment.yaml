@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin-microservice-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: admin-microservice
+  template:
+    metadata:
+      labels:
+        app: admin-microservice
+    spec:
+      containers:
+      - name: admin-microservice
+        image: admin-micro-service:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8081

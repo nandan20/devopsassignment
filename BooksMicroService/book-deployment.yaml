@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: book-microservice-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: book-microservice
+  template:
+    metadata:
+      labels:
+        app: book-microservice
+    spec:
+      containers:
+      - name: book-microservice
+        image: book-micro-service:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8082
